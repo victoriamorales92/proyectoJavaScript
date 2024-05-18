@@ -1,11 +1,4 @@
-window.onload = function() {
-    let mensaje = "¡Bienvenido a nuestro sitio de inversiones!";
-    
-    for (let i = 0; i < 1; i++) {
-        alert(mensaje);
-    }
-};
-
+alert("Bienvenido a Rise Capital!")
 
 let ingreseSuNombre = prompt("Ingrese su nombre:");
 let ingreseSuApellido = prompt("Ingrese su apellido:");
@@ -40,3 +33,8 @@ function despedir(){
 despedir();
 
 
+let mensajeDespedida = "¡Recorda seguirnos en nuestras redes sociales!";
+
+for (let i = 0; i < 1; i++) {
+    alert(mensajeDespedida);
+}
