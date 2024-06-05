@@ -3,7 +3,7 @@ alert("Bienvenido a Rise Capital!")
 let ingreseSuNombre = prompt("Ingrese su nombre:");
 let ingreseSuApellido = prompt("Ingrese su apellido:");
 
-if(ingreseSuNombre !== "" && ingreseSuApellido !== "") {
+if (ingreseSuNombre !== "" && ingreseSuApellido !== "") {
     alert("Su nombre es: " + ingreseSuNombre + " y su apellido es: " + ingreseSuApellido);
 } else {
     alert("Falta ingresar información");
@@ -14,11 +14,11 @@ console.log(ingreseSuNombre !== "" && ingreseSuApellido !== "");
 
 let edadIngresada = prompt("Ingrese su Edad: ");
 
-if (edadIngresada >= 21) { 
+if (edadIngresada >= 21) {
     alert("Su edad es: " + edadIngresada + ". Agradecemos su interés en operar con nosotros.");
-} else if (edadIngresada > 0 && edadIngresada < 21) { 
+} else if (edadIngresada > 0 && edadIngresada < 21) {
     alert("Su edad es: " + edadIngresada + ". Para operar con nosotros, debe tener más de 21 años.Agradecemos su comprensión.");
-} else if (edadIngresada <= 0) { 
+} else if (edadIngresada <= 0) {
     alert("La edad ingresada debe ser mayor a 0. Por favor, ingrese una edad válida.");
 } else {
     alert("La edad ingresada no es válida. Por favor, ingrese una edad correcta.");
@@ -75,9 +75,52 @@ const planBronce = new PlanInversion(
     ]
 );
 
+console.log(PlanInversion);
+
+
 // Lista Array con los planes disponibles
 
-const planes = [planPlatino, planOro, planPlata, planBronce];
+const planes = [
+    {
+        nombre: "Plan Platino",
+        inversionMinima: 10000,
+        servicios: [
+            "Asesoría financiera personalizada",
+            "Acceso prioritario a oportunidades exclusivas",
+            "Informes detallados de rendimiento trimestrales",
+            "Gestión de riesgos avanzada"
+        ]
+    },
+    {
+        nombre: "Plan Oro",
+        inversionMinima: 5000,
+        servicios: [
+            "Asesoría financiera especializada",
+            "Acceso a oportunidades exclusivas",
+            "Informes de rendimiento semestrales"
+        ]
+    },
+    {
+        nombre: "Plan Plata",
+        inversionMinima: 2000,
+        servicios: [
+            "Asesoría financiera básica",
+            "Informes de rendimiento anuales"
+        ]
+    },
+    {
+        nombre: "Plan Bronce",
+        inversionMinima: 1000,
+        servicios: [
+            "Asesoría general",
+            "Acceso a nuestros recursos educativos",
+            "Informes de rendimiento semestrales"
+        ]
+    },
+];
+
+console.log(planes);
+
 
 // Función para mostrar la información de los planes usando for...of
 
@@ -89,23 +132,14 @@ function mostrarPlanes() {
         for (const servicio of plan.servicios) {
             console.log("- " + servicio);
         }
-        console.log("\n"); 
+        console.log("\n");
     }
 }
-
-// Función de búsqueda de un plan por nombre
-
-function buscarPlanPorNombre(nombre) {
-    for (const plan of planes) {
-        if (plan.nombre.toLowerCase() === nombre.toLowerCase()) {
-            return plan;
-        }
-    }
-    return null; 
-}
-
-
 mostrarPlanes();
+// Función de búsqueda de un plan por nombre utilizando find
+
+const buscarPlanPorNombre = (nombre) => planes.find(plan => plan.nombre === nombre)
+
 
 // función de búsqueda
 
