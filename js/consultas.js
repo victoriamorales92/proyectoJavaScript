@@ -1,11 +1,10 @@
-
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('consultaForm');
     const mensajeExito = document.createElement('div');
-    mensajeExito.classList.add('mensaje-exito'); 
+    mensajeExito.classList.add('mensaje-exito');
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); /
+        event.preventDefault(); // Evitar el envío del formulario por defecto
 
         // Obtener los valores del formulario
         const nombre = form.elements['nombre'].value;
@@ -13,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const email = form.elements['email'].value;
         const consulta = form.elements['consulta'].value;
 
-        // objeto con los datos del formulario
+        // Crear un objeto con los datos del formulario
         const data = {
             nombre: nombre,
             apellido: apellido,

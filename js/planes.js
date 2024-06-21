@@ -123,15 +123,3 @@ document.addEventListener("DOMContentLoaded", function() {
         displayCart();
     }
 });
-
-const buscarPlanPorNombre = (nombre) => planes.find(plan => plan.nombre === nombre);
-
-const nombreBuscado = prompt("Ingrese el nombre del plan que desea buscar:");
-const planEncontrado = buscarPlanPorNombre(nombreBuscado);
-
-if (planEncontrado) {
-    console.log("Inversión Mínima: " + planEncontrado.inversionMinima + " USD");
-} else {
-    alert('El plan con el nombre "' + nombreBuscado + '" no se encontró.');
-}
-
