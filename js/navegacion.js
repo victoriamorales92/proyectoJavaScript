@@ -4,7 +4,7 @@ const cabecera = document.getElementById('header');
 const navegacion = document.createElement('navbar');
 const nav = document.createElement('nav');
 const ul = document.createElement('ul');
-const links = ["Inicio", "Planes", "Nosotros"];
+const links = ["Inicio", "Planes", "Consultas"];
 const liImagen = document.createElement('li');
 const img = document.createElement('img');
 const ORIGEN = document.createElement('a');
@@ -39,3 +39,4 @@ navegacion.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
 
 footer[0].appendChild(parrafoFooter);
 parrafoFooter.innerHTML = 'RiseCapital - ' + TIME + ' | San Juan-Argentina';
+
