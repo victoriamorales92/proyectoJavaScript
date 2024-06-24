@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", function() {
+    // Recupera la edad almacenada al cargar la página
+    let edadGuardada = localStorage.getItem("edadIngresada");
+    if (edadGuardada) {
+        document.getElementById("edadIngresada").value = edadGuardada;
+    }
+});
 
 document.getElementById("formEdad").addEventListener("submit", function(event) {
     event.preventDefault();
@@ -14,6 +21,9 @@ document.getElementById("formEdad").addEventListener("submit", function(event) {
         mostrarMensaje("error", "Error", "La edad ingresada no es válida. Por favor, ingrese una edad mayor a 0.");
         return;
     }
+
+    // localStorage
+    localStorage.setItem("edadIngresada", edadIngresada);
 
     if (edadIngresada >= 21) {
         mostrarMensaje("success", "Éxito", "Su edad es: " + edadIngresada + ". Agradecemos su interés.");
