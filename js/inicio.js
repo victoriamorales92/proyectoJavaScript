@@ -25,6 +25,10 @@ document.getElementById("formEdad").addEventListener("submit", function(event) {
     // localStorage
     localStorage.setItem("edadIngresada", edadIngresada);
 
+     // Recupera la edad guardada usando getItem (para verificar que se ha guardado correctamente)
+        let edadRecuperada = localStorage.getItem("edadIngresada");
+
+
     if (edadIngresada >= 21) {
         mostrarMensaje("success", "Éxito", "Su edad es: " + edadIngresada + ". Agradecemos su interés.");
     } else {
