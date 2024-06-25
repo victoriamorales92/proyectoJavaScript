@@ -10,30 +10,19 @@ document.getElementById("formEdad").addEventListener("submit", function(event) {
     event.preventDefault();
     let edadIngresada = document.getElementById("edadIngresada").value.trim();
 
-    if (edadIngresada === "") {
-        mostrarMensaje("error", "Error", "Por favor, ingrese su edad.");
+    // Verificar si la entrada está vacía
+    mostrarMensaje(
+        edadIngresada === "" ? "error" : isNaN(parseInt(edadIngresada)) || parseInt(edadIngresada) <= 0 ? "error" : edadIngresada >= 21 ? "success" : "info",
+        edadIngresada === "" ? "Error" : isNaN(parseInt(edadIngresada)) || parseInt(edadIngresada) <= 0 ? "Error" : edadIngresada >= 21 ? "Éxito" : "Información",
+        edadIngresada === "" ? "Por favor, ingrese su edad." : isNaN(parseInt(edadIngresada)) || parseInt(edadIngresada) <= 0 ? "La edad ingresada no es válida. Por favor, ingrese una edad mayor a 0." : edadIngresada >= 21 ? "Su edad es: " + edadIngresada + ". Agradecemos su interés." : "Su edad es: " + edadIngresada + ". Debe ser mayor de 21 años para continuar."
+    );
+
+    if (edadIngresada === "" || isNaN(parseInt(edadIngresada)) || parseInt(edadIngresada) <= 0) {
         return;
     }
 
-    edadIngresada = parseInt(edadIngresada);
-
-    if (isNaN(edadIngresada) || edadIngresada <= 0) {
-        mostrarMensaje("error", "Error", "La edad ingresada no es válida. Por favor, ingrese una edad mayor a 0.");
-        return;
-    }
-
-    // localStorage
-    localStorage.setItem("edadIngresada", edadIngresada);
-
-     // Recupera la edad guardada usando getItem (para verificar que se ha guardado correctamente)
-        let edadRecuperada = localStorage.getItem("edadIngresada");
-
-
-    if (edadIngresada >= 21) {
-        mostrarMensaje("success", "Éxito", "Su edad es: " + edadIngresada + ". Agradecemos su interés.");
-    } else {
-        mostrarMensaje("info", "Información", "Su edad es: " + edadIngresada + ". Debe ser mayor de 21 años para continuar.");
-    }
+    // Almacenar la edad en localStorage
+    localStorage.setItem("edadIngresada", parseInt(edadIngresada));
 
     document.getElementById("formEdad").reset(); // Resetea el formulario
 });
