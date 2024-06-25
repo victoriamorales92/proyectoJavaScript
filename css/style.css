@@ -78,7 +78,7 @@ footer p {
 .plan {
     background-color: #FFFFFF;
     border: 2px solid #15644C;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 20px;
     margin: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -96,8 +96,9 @@ footer p {
 
 /* styles.css */
 #cart {
-    margin-top: 20px;
-    padding: 10px;
+    margin-left:10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     max-width: 300px;
@@ -119,21 +120,38 @@ footer p {
 
 /* estilos boton */
 
+/* Establecer la altura de cada plan */
+.plan {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 23%;
+    margin: 1%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón de "Seleccionar Plan" */
 .add-to-cart-btn {
     padding: 10px 20px;
-    background-color: #17a563; 
+    background-color: #17a563;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    align-self: flex-end;
 }
 
 .add-to-cart-btn:hover {
-    background-color: #3b259e; 
+    background-color: #e0ede1;
 }
 
-.contenedorDiv{
+/* Contenedor de los planes */
+.contenedorDiv {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 
@@ -208,7 +226,7 @@ textarea {
 }
 
 textarea {
-    resize: vertical; /* Permite redimensionar verticalmente */
+    resize: vertical; 
 }
 
 button[type="submit"] {
